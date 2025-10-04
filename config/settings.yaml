@@ -1,0 +1,28 @@
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  models: "data/models"
+  log_file: "logs/app.log"
+
+data:
+  n_samples: 5000
+  n_features: 6
+  contamination: 0.03
+  random_state: 42
+
+models:
+  iforest:
+    n_estimators: 200
+    max_samples: "auto"
+    contamination: 0.03
+    random_state: 42
+    model_path: "data/models/iforest.joblib"
+  autoencoder:
+    epochs: 20
+    batch_size: 128
+    validation_split: 0.1
+    model_path: "data/models/autoencoder.keras"
+    scaler_path: "data/models/ae_scaler.joblib"
+
+api:
+  model: "iforest"
